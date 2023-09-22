@@ -1,0 +1,21 @@
+#subscription-table td, 
+#subscription-table th {
+        border: 0;
+}
+
+.subscription-table-container .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscription-table-container #subscriptionSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.subscription-table-container .dropdown-menu {
+    min-width: 250px;
+}
