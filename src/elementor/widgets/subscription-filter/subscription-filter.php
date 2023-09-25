@@ -14,7 +14,7 @@ function subscription_filter()
         // Widget Name
         public function get_name()
         {
-            return 'subscription-table-widget';
+            return 'subscription-filter-widget';
         }
 
         // Widget Title
