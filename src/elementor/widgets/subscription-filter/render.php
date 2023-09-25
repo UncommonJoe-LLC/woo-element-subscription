@@ -2,12 +2,16 @@
 
 function render_filter_widget($widget)
 {
+    $selected_icon = $widget->get_settings('subscription_filter_button_icon');
 ?>
 
     <!-- Filter button -->
     <div class="dropdown">
-        <button type="button" id="filterListBtn" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            Filter
+        <button type="button" id="filterListBtn" class="btn btn-light d-flex align-items-center" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <?php echo $widget->get_settings('subscription_filter_button_text'); ?>
+            <div class="ps-2">
+                <i class="<?php echo esc_attr($selected_icon['value']); ?>" aria-hidden="true"></i>
+            </div>
         </button>
 
         <div class="dropdown-menu p-4">
