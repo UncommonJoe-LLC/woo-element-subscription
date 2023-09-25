@@ -15,7 +15,3 @@
     flex-direction: row;
     align-items: center;
 }
-
-.subscription-table-container .dropdown-menu {
-    min-width: 250px;
-}

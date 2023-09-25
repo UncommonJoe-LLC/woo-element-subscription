@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 				searchData,
 				index
 			) {
-				if (status.indexOf(searchData[5]) !== -1) {
+				if (status.indexOf(searchData[statusColumnIndex]) !== -1) {
 					return true;
 				}
 				return false;

@@ -39,7 +39,7 @@ function enqueue_plugin_scripts()
     wp_enqueue_script('subscription-scripts', plugin_dir_url(__FILE__) . 'src/js/scripts.js', ['jquery', 'elementor-frontend', 'dataTables-script'], '1.0', true);
 
     // Localize the script to pass the AJAX URL
-    wp_localize_script('subscription-scripts', 'search_ajax', array(
+    wp_localize_script('subscription-scripts', 'scripts', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
 
