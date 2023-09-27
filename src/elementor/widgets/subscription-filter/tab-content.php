@@ -51,7 +51,6 @@ function filter_tab_content($widget)
         ]
     );
 
-
     $widget->add_responsive_control(
         'subscription_filter_button_icon_size',
         [
@@ -84,7 +83,7 @@ function filter_tab_content($widget)
                 'unit' => 'px',
             ],
             'selectors' => [
-                '{{WRAPPER}} #filterListBtn i.fas' => 'font-size: {{SIZE}}{{UNIT}};',
+                '#filterListBtn i.fas' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );

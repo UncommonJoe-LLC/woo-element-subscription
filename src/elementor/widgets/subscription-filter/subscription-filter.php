@@ -20,7 +20,7 @@ function subscription_filter()
         // Widget Title
         public function get_title()
         {
-            return __('Filter', 'elementor-subscription-table');
+            return __('WooCommerce Subscription Filter', 'elementor-subscription-table');
         }
 
         // Icon for widget

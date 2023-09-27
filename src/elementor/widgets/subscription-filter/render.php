@@ -14,7 +14,7 @@ function render_filter_widget($widget)
             </div>
         </button>
 
-        <div class="dropdown-menu p-4">
+        <div id="filterDropdown" class="dropdown-menu p-4">
             <form>
                 <div class="form-container">
                     <label for="subscriptionFilterDateRange">Purchased</label>
@@ -52,7 +52,7 @@ function render_filter_widget($widget)
 
                 <!-- Buttons -->
                 <button type="button" id="applyFilter" class="btn btn-primary btn-sm">Apply</button>
-                <button type="button" id="clearFilter" class="btn btn-light">Clear</button>
+                <button type="button" id="clearFilter" class="btn btn-light btn-sm">Clear</button>
             </form>
         </div>
     </div>
