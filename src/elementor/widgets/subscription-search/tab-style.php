@@ -17,7 +17,7 @@ function search_tab_styles($widget)
         \Elementor\Group_Control_Typography::get_type(),
         [
             'name' => 'search_title',
-            'selector' => '{{WRAPPER}} #subscriptionSearch label, #subscription-table_length label',
+            'selector' => '#subscriptionSearch label, #subscription-table_length label',
         ]
     );
 
@@ -27,7 +27,7 @@ function search_tab_styles($widget)
             'label' => __('Color', 'elementor-subscription-table'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch label, #subscription-table_length label' => 'color: {{VALUE}};',
+                '#subscriptionSearch label, #subscription-table_length label' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -46,7 +46,7 @@ function search_tab_styles($widget)
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'search_input_border',
-            'selector' => '{{WRAPPER}} #subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select',
+            'selector' => '#subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select',
         ]
     );
 
@@ -82,7 +82,7 @@ function search_tab_styles($widget)
                 'unit' => '%',
             ],
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch input' => 'width: {{SIZE}}{{UNIT}};',
+                '#subscriptionSearch input' => 'width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -93,7 +93,7 @@ function search_tab_styles($widget)
             'label'      => __('Margin', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} #subscriptionSearch' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '#subscriptionSearch' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '',
@@ -113,7 +113,7 @@ function search_tab_styles($widget)
             'label'      => __('Padding', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} #subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '#subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '8',
@@ -134,7 +134,7 @@ function search_tab_styles($widget)
             'label'      => __('Border Radius', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} #subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '#subscriptionSearch input, #subscriptionSearch input, #subscription-table_length select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '',

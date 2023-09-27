@@ -27,7 +27,7 @@ function table_tab_content($widget)
                 'Status' => esc_html__('Status', 'elementor-subscription-table'),
             ],
             'selectors' => [
-                '{{WRAPPER}} .your-class' => 'border-style: {{VALUE}};',
+                '.your-class' => 'border-style: {{VALUE}};',
             ],
         ]
     );

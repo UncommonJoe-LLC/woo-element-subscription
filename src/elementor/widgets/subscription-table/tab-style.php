@@ -14,7 +14,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'border',
-            'selector' => '{{WRAPPER}} #subscription-table',
+            'selector' => '#subscription-table',
         ]
     );
 
@@ -34,7 +34,7 @@ function table_tab_styles($widget)
             'label'     => __('Cell Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscription-table tr:nth-child(even) td' => 'background-color: {{VALUE}};',
+                '#subscription-table tr:nth-child(even) td' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -46,7 +46,7 @@ function table_tab_styles($widget)
             'label'     => __('Alternate Cell Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscription-table tr:nth-child(odd) td' => 'background-color: {{VALUE}};',
+                '#subscription-table tr:nth-child(odd) td' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -68,7 +68,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Typography::get_type(),
         [
             'name' => 'table_head_typography',
-            'selector' => '{{WRAPPER}} #subscription-table th',
+            'selector' => '#subscription-table th',
         ]
     );
 
@@ -78,7 +78,7 @@ function table_tab_styles($widget)
             'label' => __('Color', 'elementor-subscription-table'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscription-table th' => 'color: {{VALUE}};',
+                '#subscription-table th' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -89,7 +89,7 @@ function table_tab_styles($widget)
             'label' => __('Background Color', 'elementor-subscription-table'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscription-table th' => 'background-color: {{VALUE}};',
+                '#subscription-table th' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -98,7 +98,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'table_head_th_border',
-            'selector' => '{{WRAPPER}} #subscription-table th',
+            'selector' => '#subscription-table th',
         ]
     );
 
@@ -120,7 +120,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Typography::get_type(),
         [
             'name' => 'table_body_typography',
-            'selector' => '{{WRAPPER}} #subscription-table td',
+            'selector' => '#subscription-table td',
         ]
     );
 
@@ -130,7 +130,7 @@ function table_tab_styles($widget)
             'label' => __('Color', 'elementor-subscription-table'),
             'type' => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} #subscription-table td' => 'color: {{VALUE}};',
+                '#subscription-table td' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -142,7 +142,7 @@ function table_tab_styles($widget)
             'label'      => __('Cell Padding', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} #subscription-table td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '#subscription-table td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '10',
@@ -160,7 +160,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'table_body_td_border',
-            'selector' => '{{WRAPPER}} #subscription-table td',
+            'selector' => '#subscription-table td',
         ]
     );
 
@@ -197,7 +197,7 @@ function table_tab_styles($widget)
             'label'     => __('Background', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'background-color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -208,7 +208,7 @@ function table_tab_styles($widget)
             'label'     => __('Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -229,7 +229,7 @@ function table_tab_styles($widget)
             'label'     => __('Background', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'background-color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -240,7 +240,7 @@ function table_tab_styles($widget)
             'label'     => __('Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -261,7 +261,7 @@ function table_tab_styles($widget)
             'label'     => __('Background', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button.disabled a' => 'background-color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button.disabled a' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -272,7 +272,7 @@ function table_tab_styles($widget)
             'label'     => __('Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button.disabled a' => 'color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button.disabled a' => 'color: {{VALUE}};',
             ],
         ]
     );
@@ -286,7 +286,7 @@ function table_tab_styles($widget)
             'label'      => __('Margin', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '.dataTables_paginate .paginate_button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '',
@@ -306,7 +306,7 @@ function table_tab_styles($widget)
             'label'      => __('Padding', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '.dataTables_paginate .paginate_button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '6',
@@ -324,7 +324,7 @@ function table_tab_styles($widget)
         \Elementor\Group_Control_Border::get_type(),
         [
             'name' => 'pagination_button_border',
-            'selector' => '{{WRAPPER}} .dataTables_paginate .paginate_button a',
+            'selector' => '.dataTables_paginate .paginate_button a',
         ]
     );
 
@@ -334,7 +334,7 @@ function table_tab_styles($widget)
             'label'      => __('Border Radius', 'elementor-subscription-table'),
             'type'       => \Elementor\Controls_Manager::DIMENSIONS,
             'selectors'  => [
-                '{{WRAPPER}} .dataTables_paginate .paginate_button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '.dataTables_paginate .paginate_button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'default'    => [
                 'top'    => '',

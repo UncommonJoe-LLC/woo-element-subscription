@@ -45,7 +45,7 @@ function search_tab_content($widget)
             'default' => 'Vertical',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch' => 'flex-direction: {{VALUE}};',
+                '#subscriptionSearch' => 'flex-direction: {{VALUE}};',
             ],
         ]
     );
@@ -75,7 +75,7 @@ function search_tab_content($widget)
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch' => 'align-items: {{VALUE}};',
+                '#subscriptionSearch' => 'align-items: {{VALUE}};',
             ],
         ]
     );
@@ -105,7 +105,7 @@ function search_tab_content($widget)
             'default' => 'flex-start',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch' => 'align-items: {{VALUE}};',
+                '#subscriptionSearch' => 'align-items: {{VALUE}};',
             ],
         ]
     );
@@ -145,7 +145,7 @@ function search_tab_content($widget)
                 'unit' => 'px',
             ],
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch label' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '#subscriptionSearch label' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -185,7 +185,7 @@ function search_tab_content($widget)
                 'unit' => 'px',
             ],
             'selectors' => [
-                '{{WRAPPER}} #subscriptionSearch label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                '#subscriptionSearch label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
     );

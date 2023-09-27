@@ -20,7 +20,7 @@ function subscription_search()
         // Widget Title
         public function get_title()
         {
-            return __('Search', 'elementor-subscription-table');
+            return __('WooCommerce Subscription Search', 'elementor-subscription-table');
         }
 
         // Icon for widget
