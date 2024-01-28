@@ -3,7 +3,7 @@
 /**
  * Plugin Name: WooCommerce Subscription Table for Elementor
  * Description: Adds subscription table widget to Elementor
- * Version: 1.0
+ * Version: 1.6
  * Author: UncommonJoe LLC
  * Author URI: https://uncommonjoe.com
  */
@@ -35,8 +35,6 @@ function my_plugin_dependency_notice()
 // Add scripts and stylesheets
 function enqueue_plugin_scripts()
 {
-    // Enqueue your JavaScript file
-    wp_enqueue_script('subscription-scripts', plugin_dir_url(__FILE__) . 'src/js/scripts.js', ['jquery', 'elementor-frontend', 'dataTables-script'], '1.0', true);
 
     // Localize the script to pass the AJAX URL
     wp_localize_script('subscription-scripts', 'scripts', array(
@@ -57,6 +55,9 @@ function enqueue_plugin_scripts()
     // Enqueue the stylesheet.
     wp_enqueue_style('custom-styles', plugin_dir_url(__FILE__) . 'src/css/styles.css', array(), '1.0', 'all');
     add_action('wp_enqueue_scripts', 'enqueue_datatables_script');
+
+    // Enqueue your JavaScript file
+    wp_enqueue_script('subscription-scripts', plugin_dir_url(__FILE__) . 'src/js/scripts.js', ['jquery', 'dataTables-script'], '1.0', true);
 }
 
 function add_elementor_widget_categories($elements_manager)

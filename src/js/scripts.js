@@ -6,7 +6,6 @@ jQuery(document).ready(function ($) {
 		info: true,
 		lengthChange: true,
 		dom: '<"top">t<"bottom"ip>',
-		pageLength: 100,
 		language: {
 			paginate: {
 				next: 'Next',
@@ -14,6 +13,8 @@ jQuery(document).ready(function ($) {
 			},
 		},
 	});
+
+	redrawTable();
 
 	// Search subscription table
 	$('#subscriptionSearch input').on('input', redrawTable);
@@ -24,6 +25,14 @@ jQuery(document).ready(function ($) {
 		const selectedRange = $('#subscriptionFilterDateRange').val();
 		const status = $(
 			'#subscriptionFilterStatus input[type="checkbox"]:checked'
+		)
+			.map(function () {
+				return this.value;
+			})
+			.get();
+
+		const providers = $(
+			'#subscriptionFilterProvider input[type="checkbox"]:checked'
 		)
 			.map(function () {
 				return this.value;
@@ -60,6 +69,22 @@ jQuery(document).ready(function ($) {
 			});
 		}
 
+		$.fn.dataTable.ext.search.pop(); // Remove previous provider filter
+		if (providers.length > 0) {
+			$.fn.dataTable.ext.search.push(function (
+				settings,
+				searchData,
+				index
+			) {
+				// Assuming the provider column is the last one (index 6),
+				// if it's not, replace 6 with the correct index
+				if (providers.indexOf(searchData[6]) !== -1) {
+					return true;
+				}
+				return false;
+			});
+		}
+
 		// Redraw the table
 		subscriptionTable.draw();
 	}
@@ -67,6 +92,7 @@ jQuery(document).ready(function ($) {
 	// Apply filter when "Apply" button is clicked
 	$('#applyFilter').on('click', function () {
 		$('#filterListBtn').dropdown('toggle');
+		console.log('a');
 		redrawTable();
 	});
 
