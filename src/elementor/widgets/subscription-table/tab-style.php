@@ -178,7 +178,6 @@ function table_tab_styles($widget)
         ]
     );
 
-
     $widget->start_controls_tabs(
         'pagination_tabs'
     );
@@ -215,6 +214,38 @@ function table_tab_styles($widget)
 
     $widget->end_controls_tab();
 
+    /*** Pagination Button Tab Active ***/
+    $widget->start_controls_tab(
+        'pagination_button_tab_active',
+        [
+            'label' => esc_html__('Active', 'textdomain'),
+        ]
+    );
+
+    $widget->add_control(
+        'pagination_button_active_background',
+        [
+            'label'     => __('Background', 'elementor-subscription-table'),
+            'type'      => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '.dataTables_paginate .paginate_button.active a' => 'background-color: {{VALUE}};',
+            ],
+        ]
+    );
+
+    $widget->add_control(
+        'pagination_button_active_color',
+        [
+            'label'     => __('Color', 'elementor-subscription-table'),
+            'type'      => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '.dataTables_paginate .paginate_button.active a' => 'color: {{VALUE}};',
+            ],
+        ]
+    );
+
+    $widget->end_controls_tab();
+
     /*** Pagination Button Tab Hover ***/
     $widget->start_controls_tab(
         'pagination_button_tab_hover',
@@ -229,7 +260,7 @@ function table_tab_styles($widget)
             'label'     => __('Background', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '.dataTables_paginate .paginate_button a' => 'background-color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a:hover' => 'background-color: {{VALUE}};',
             ],
         ]
     );
@@ -240,7 +271,7 @@ function table_tab_styles($widget)
             'label'     => __('Color', 'elementor-subscription-table'),
             'type'      => \Elementor\Controls_Manager::COLOR,
             'selectors' => [
-                '.dataTables_paginate .paginate_button a' => 'color: {{VALUE}};',
+                '.dataTables_paginate .paginate_button a:hover' => 'color: {{VALUE}};',
             ],
         ]
     );

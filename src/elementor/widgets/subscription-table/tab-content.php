@@ -25,6 +25,7 @@ function table_tab_content($widget)
                 'Date' => esc_html__('Purchased', 'elementor-subscription-table'),
                 'Amount' => esc_html__('Amount', 'elementor-subscription-table'),
                 'Status' => esc_html__('Status', 'elementor-subscription-table'),
+                'Provider' => esc_html__('Provider', 'elementor-subscription-table'),
             ],
             'selectors' => [
                 '.your-class' => 'border-style: {{VALUE}};',

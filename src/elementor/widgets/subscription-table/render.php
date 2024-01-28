@@ -2,11 +2,26 @@
 
 function render_table_widget($widget)
 {
-    $subscriptions = wcs_get_subscriptions([
-        'orderby'                => 'start_date',
-        'order'                  => 'DESC',
-        'subscription_status'    => array('all'),
-    ]);
+    $subscription_args = array(
+        'post_type' => 'shop_subscription',
+        'post_status' => 'any',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => -1,
+    );
+
+    $query = new WP_Query($subscription_args);
+
+
+    // Get list of all providers
+    $provider_args = array(
+        'post_type' => 'provider_info',
+        'posts_per_page' => -1
+    );
+
+    $post = new WP_Query($provider_args);
+    $providers = $post->posts;
+
     $settings = $widget->get_settings_for_display();
     $columns = $settings['table_columns'];
 
@@ -29,10 +44,11 @@ function render_table_widget($widget)
             </thead>
             <tbody id="subscription-table">
                 <?php
-                if (!empty($subscriptions)) {
-                ?>
-                    <?php
-                    foreach ($subscriptions as $subscription) :
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) :
+                        $query->the_post();
+                        $subscription = wcs_get_subscription(get_the_ID());
+
                         $user_id = $subscription->get_user_id();
                         $user_data = get_userdata($user_id);
 
@@ -42,14 +58,27 @@ function render_table_widget($widget)
                         $total_amount = $subscription->get_total();
                         $customer_email = $user_data->user_email;
                         $customer_phone = get_user_meta($user_id, 'billing_phone', true);
-                    ?>
+
+                        // Retrieve the provider id saved on user profile
+                        $provider_id = get_user_meta($user_id, 'provider', true);
+
+                        // Iterate over each provider and match id saved to users
+                        // profile to get the name and update provider_title with that
+                        foreach ($providers as $provider) {
+                            if ($provider->ID == $provider_id) {
+                                // Update $provider_title with the title from the matched provider
+                                $provider_title = $provider->post_title;
+                                break; // Stop the loop if a match is found
+                            }
+                        }
+                ?>
                         <tr>
                             <?php foreach ($columns as $column) : ?>
                                 <td>
                                     <?php
                                     switch ($column['table_column_type']) {
                                         case 'Customer':
-                                            echo esc_html($customer_name);
+                                            echo esc_html(ucwords($customer_name));
                                             break;
                                         case 'Email':
                                             echo esc_html($customer_email);
@@ -57,14 +86,17 @@ function render_table_widget($widget)
                                         case 'Phone':
                                             echo esc_html($customer_phone);
                                             break;
-                                        case 'Purchases':
+                                        case 'Date':
                                             echo esc_html($purchase_date);
                                             break;
                                         case 'Amount':
                                             echo esc_html('$' . $total_amount);
                                             break;
                                         case 'Status':
-                                            echo esc_html($status);
+                                            echo esc_html(ucwords($status));
+                                            break;
+                                        case 'Provider':
+                                            echo esc_html(ucwords($provider_title));
                                             break;
                                         default:
                                             echo '';  // Output nothing if the column label doesn't match any of the above
@@ -73,16 +105,10 @@ function render_table_widget($widget)
                                     ?>
                                 </td>
                             <?php endforeach; ?>
-
-                            <!-- <td><?php echo esc_html($customer_name); ?></td>
-                            <td><?php echo esc_html($customer_email); ?></td>
-                            <td><?php echo esc_html($customer_phone); ?></td>
-                            <td><?php echo esc_html($purchase_date); ?></td>
-                            <td><?php echo esc_html('$' . $total_amount); ?></td>
-                            <td><?php echo esc_html($status); ?></td> -->
                         </tr>
                 <?php
-                    endforeach;
+                    endwhile;
+                    wp_reset_postdata();
                 } else {
                     echo '<tr><td colspan="4">No active subscriptions found.</td></tr>';
                 }
@@ -91,9 +117,4 @@ function render_table_widget($widget)
         </table>
         </tbody>
     </div>
-
-    <!-- <pre>
-    <?php print_r($subscriptions); ?>
-    </pre> -->
-
 <?php } ?>
